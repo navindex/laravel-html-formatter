@@ -26,7 +26,7 @@
         "php": "^7.3|^8.0",
         "illuminate/http": "^8.61",
         "illuminate/support": "^8.61",
-        "navindex/html-formatter": "dev-master"
+        "navindex/html-formatter": "^0.1.0"
     },
     "require-dev": {
         "larapack/dd": "^1.1",
