@@ -2,8 +2,10 @@
 
 namespace Navindex\LaravelHtmlFormatter;
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
+use Navindex\LaravelHtmlFormatter\HtmlFormatter;
 
 class HtmlFormatterServiceProvider extends ServiceProvider
 {
@@ -29,5 +31,8 @@ class HtmlFormatterServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/htmlformatter.php' => App::configPath('htmlformatter.php'),
             ], 'config');
         }
+
+        $kernel = $this->app->make(Kernel::class);
+        $kernel->pushMiddleware(HtmlFormatter::class);
     }
 }
